@@ -27,6 +27,10 @@ def main():
         print("[*] Initializing Weapon Detection...")
         weapon_node = build_default_weapon_node()
 
+        print("[*] Starting Navigation API Server on port 7000...")
+        nav_node = NavServerNode(api_key='AIzaSyBySlnoZoDufM1rV4yo47sCNzSj1uspbgs')
+        nav_node.start()
+
         # Wire up the Central Aggregator!
         print("[*] Initializing Central Aggregator...")
         aggregator = AggregatorNode(expected_models=["FaceModel", "WeaponModel"])
